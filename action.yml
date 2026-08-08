@@ -22,7 +22,7 @@ outputs:
   report:
     description: Relative path to the Markdown evidence report.
 runs:
-  using: node20
+  using: node24
   main: action-dist/index.js
 branding:
   icon: shield
