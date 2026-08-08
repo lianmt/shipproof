@@ -7,7 +7,7 @@ ShipProof 不替代 Codex，而是把“Codex 负责实现”和“独立工具�
 在目标仓库安装：
 
 ```bash
-npm install --save-dev shipproof
+npm install --save-dev github:lianmt/shipproof#v0.1.1
 npx shipproof init
 npx shipproof install-codex-hooks
 ```
@@ -55,20 +55,20 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 20
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - uses: your-org/shipproof@v0.1.0
+      - uses: lianmt/shipproof@v0.1.1
         with:
           baseline-ref: origin/main
           config: shipproof.yml
           task: task.md
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: shipproof-evidence

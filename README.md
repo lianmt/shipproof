@@ -22,10 +22,10 @@ AI 编程工具很擅长生成实现，却容易把源码存在、命令返回 0
 
 ## 5 分钟开始
 
-要求 Node.js 20 或更高版本。
+要求 Node.js 20 或更高版本。当前版本从 GitHub 标签安装，尚未发布到 npm registry：
 
 ```bash
-npm install --save-dev shipproof
+npm install --save-dev github:lianmt/shipproof#v0.1.1
 npx shipproof init
 ```
 
@@ -119,7 +119,7 @@ Codex 接入依据 OpenAI 官方的 [Codex SDK](https://learn.chatgpt.com/docs/c
 ### GitHub Action
 
 ```yaml
-- uses: your-org/shipproof@v0.1.0
+- uses: lianmt/shipproof@v0.1.1
   with:
     config: shipproof.yml
     task: task.md

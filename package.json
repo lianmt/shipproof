@@ -1,6 +1,6 @@
 {
-  "name": "shipproof",
-  "version": "0.1.0",
+  "name": "@lianmt/shipproof",
+  "version": "0.1.1",
   "description": "Model-independent acceptance contracts and tamper-aware evidence for AI coding agents.",
   "type": "module",
   "bin": {
@@ -39,6 +39,14 @@
     "evidence"
   ],
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lianmt/shipproof.git"
+  },
+  "homepage": "https://github.com/lianmt/shipproof#readme",
+  "bugs": {
+    "url": "https://github.com/lianmt/shipproof/issues"
+  },
   "dependencies": {
     "@actions/core": "^2.0.3",
     "commander": "^14.0.0",
