@@ -17,6 +17,7 @@ jobs:
         with:
           node-version: 20
       - run: npm ci && npm run build
+      - run: npx playwright install --with-deps chromium
       - uses: ./
         with:
           config: shipproof.yml

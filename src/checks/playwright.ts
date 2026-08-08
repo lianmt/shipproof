@@ -1,4 +1,5 @@
 import { mkdir } from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { runShell, startBackground, type BackgroundProcess } from "../process.js";
 import type { CheckResult, PlaywrightCheck } from "../types.js";
@@ -63,8 +64,9 @@ export async function runPlaywrightCheck(
 
     let playwright: any;
     try {
+      const requireFromProject = createRequire(path.join(root, "package.json"));
       const moduleName = "playwright";
-      playwright = await import(moduleName);
+      playwright = requireFromProject(moduleName);
     } catch (error) {
       return createResult(
         check,

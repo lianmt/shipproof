@@ -21,7 +21,7 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json && node scripts/make-cli-executable.mjs && ncc build dist/action.js -o action-dist --minify",
+    "build": "tsc -p tsconfig.build.json && node scripts/make-cli-executable.mjs && tsc -p tsconfig.action.json && node scripts/set-package-type.mjs action-build commonjs && ncc build action-build/action.js -o action-dist --minify && node scripts/set-package-type.mjs action-dist commonjs",
     "clean": "node scripts/clean.mjs",
     "lint": "eslint src test",
     "typecheck": "tsc -p tsconfig.json --noEmit",
@@ -40,7 +40,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@actions/core": "^3.0.1",
+    "@actions/core": "^2.0.3",
     "commander": "^14.0.0",
     "fast-glob": "^3.3.3",
     "micromatch": "^4.0.8",

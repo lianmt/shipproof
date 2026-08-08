@@ -95,10 +95,10 @@ export async function workspaceFingerprint(cwd: string): Promise<{
     return { hash: all.hash, commit: null, dirty: null };
   }
   const commit = commitResult.stdout.trim();
-  const statusResult = await runGit(["status", "--porcelain=v1", "-z"], cwd, true);
-  const diffResult = await runGit(["diff", "--binary", "HEAD"], cwd, true);
+  const statusResult = await runGit(["status", "--porcelain=v1", "-z", "--", "."], cwd, true);
+  const diffResult = await runGit(["diff", "--binary", "HEAD", "--", "."], cwd, true);
   const untrackedResult = await runGit(
-    ["ls-files", "--others", "--exclude-standard", "-z"],
+    ["ls-files", "--others", "--exclude-standard", "-z", "--", "."],
     cwd,
     true,
   );

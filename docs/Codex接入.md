@@ -58,6 +58,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
       - uses: your-org/shipproof@v0.1.0
         with:
           baseline-ref: origin/main

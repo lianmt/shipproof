@@ -81,6 +81,8 @@ checks:
 
 HTTP 和浏览器检查默认拒绝复用启动前已经响应的 URL，避免把另一个旧进程误当成当前代码。确实要验证外部环境时，显式配置 `allowExisting: true`。
 
+Playwright 检查要求目标仓库安装 `playwright`，并预先执行 `npx playwright install chromium`。GitHub Action 不会静默联网下载浏览器。
+
 ## 支持的检查
 
 | 类型 | 验收能力 | 主要证据 |
