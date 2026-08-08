@@ -48,7 +48,7 @@
     "zod": "^4.1.5"
   },
   "optionalDependencies": {
-    "@openai/codex-sdk": "^0.87.0",
+    "@openai/codex-sdk": "^0.147.0",
     "playwright": "^1.55.0"
   },
   "devDependencies": {
