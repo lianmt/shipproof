@@ -1,0 +1,34 @@
+version: 1
+evidenceDir: .shipproof/runs
+protected:
+  - shipproof.yml
+  - test/**
+  - task.md
+checks:
+  - id: unit-tests
+    type: command
+    run: npm test
+    timeoutMs: 30000
+  - id: source-file
+    type: file
+    path: src/server.cjs
+    exists: true
+    contains: Current implementation ready
+    minBytes: 100
+  - id: live-http
+    type: http
+    start: node src/server.cjs
+    url: http://127.0.0.1:41739/
+    expectStatus: 200
+    contains: Current implementation ready
+    readyTimeoutMs: 10000
+  - id: real-browser
+    type: playwright
+    start: node src/server.cjs
+    url: http://127.0.0.1:41739/
+    expectStatus: 200
+    contains: Current implementation ready
+    selector: '[data-testid="ready"]'
+    title: ShipProof Fixture
+    viewport: { width: 390, height: 844 }
+    readyTimeoutMs: 10000

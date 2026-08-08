@@ -1,0 +1,29 @@
+name: ShipProof
+description: Verify an AI-authored change against a tamper-aware acceptance contract.
+author: ShipProof contributors
+inputs:
+  config:
+    description: Path to shipproof.yml relative to cwd.
+    required: false
+    default: shipproof.yml
+  task:
+    description: Optional task specification path relative to cwd.
+    required: false
+  cwd:
+    description: Repository working directory.
+    required: false
+    default: .
+  baseline-ref:
+    description: Optional trusted git ref used to hash protected acceptance files.
+    required: false
+outputs:
+  status:
+    description: VERIFIED, FAILED, BLOCKED, or UNVERIFIED.
+  report:
+    description: Relative path to the Markdown evidence report.
+runs:
+  using: node20
+  main: action-dist/index.js
+branding:
+  icon: shield
+  color: blue

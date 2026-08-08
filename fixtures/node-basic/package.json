@@ -1,0 +1,9 @@
+{
+  "name": "shipproof-node-basic-fixture",
+  "private": true,
+  "scripts": {
+    "test": "node test/basic.test.cjs",
+    "typecheck": "node --check src/server.cjs",
+    "build": "node --check src/server.cjs"
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-08-08T08:32:49.368Z",
+  "total": 20,
+  "passed": 20,
+  "falseVerified": 0,
+  "cases": [
+    {
+      "id": "clean-command",
+      "expected": "VERIFIED",
+      "actual": "VERIFIED",
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "id": "nonzero-exit",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "command-timeout",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "passed": true,
+      "reasons": [
+        "required check blocked: check"
+      ]
+    },
+    {
+      "id": "missing-required-output",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "forbidden-output",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "optional-failure",
+      "expected": "VERIFIED",
+      "actual": "VERIFIED",
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "id": "existing-file",
+      "expected": "VERIFIED",
+      "actual": "VERIFIED",
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "id": "missing-file",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "forbidden-file-text",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "minimum-size",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "missing-lock",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "passed": true,
+      "reasons": [
+        "verification lock is missing; run shipproof lock before implementation",
+        "acceptance integrity could not be established"
+      ]
+    },
+    {
+      "id": "protected-test-changed",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "passed": true,
+      "reasons": [
+        "protected acceptance files changed after the lock was created",
+        "acceptance integrity could not be established"
+      ]
+    },
+    {
+      "id": "config-changed",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "passed": true,
+      "reasons": [
+        "configuration changed after the lock was created",
+        "protected acceptance files changed after the lock was created",
+        "acceptance integrity could not be established"
+      ]
+    },
+    {
+      "id": "task-changed",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "passed": true,
+      "reasons": [
+        "task specification changed after the lock was created",
+        "acceptance integrity could not be established"
+      ]
+    },
+    {
+      "id": "http-pass",
+      "expected": "VERIFIED",
+      "actual": "VERIFIED",
+      "passed": true,
+      "reasons": []
+    },
+    {
+      "id": "http-status-fail",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "http-body-fail",
+      "expected": "FAILED",
+      "actual": "FAILED",
+      "passed": true,
+      "reasons": [
+        "required check failed: check"
+      ]
+    },
+    {
+      "id": "http-start-crash",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "passed": true,
+      "reasons": [
+        "required check blocked: check"
+      ]
+    },
+    {
+      "id": "stale-service-refused",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "passed": true,
+      "reasons": [
+        "required check blocked: check"
+      ]
+    },
+    {
+      "id": "stale-evidence",
+      "expected": "UNVERIFIED",
+      "actual": "UNVERIFIED",
+      "passed": true,
+      "reasons": [
+        "workspace changed after evidence was recorded"
+      ]
+    }
+  ]
+}

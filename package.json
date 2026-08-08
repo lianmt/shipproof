@@ -1,0 +1,64 @@
+{
+  "name": "shipproof",
+  "version": "0.1.0",
+  "description": "Model-independent acceptance contracts and tamper-aware evidence for AI coding agents.",
+  "type": "module",
+  "bin": {
+    "shipproof": "dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "action-dist",
+    "action.yml",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/make-cli-executable.mjs && ncc build dist/action.js -o action-dist --minify",
+    "clean": "node scripts/clean.mjs",
+    "lint": "eslint src test",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "benchmark": "npm run build && node dist/cli.js benchmark",
+    "prepack": "npm run clean && npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "ai-coding-agent",
+    "codex",
+    "verification",
+    "testing",
+    "github-action",
+    "evidence"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "commander": "^14.0.0",
+    "fast-glob": "^3.3.3",
+    "micromatch": "^4.0.8",
+    "yaml": "^2.8.1",
+    "zod": "^4.1.5"
+  },
+  "optionalDependencies": {
+    "@openai/codex-sdk": "^0.87.0",
+    "playwright": "^1.55.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^22.17.2",
+    "@vercel/ncc": "^0.38.3",
+    "eslint": "^9.34.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vitest": "^3.2.4"
+  }
+}
