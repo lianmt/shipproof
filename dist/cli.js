@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { access, appendFile, readFile, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { Command } from "commander";
 import YAML from "yaml";
@@ -11,10 +12,11 @@ import { createLock } from "./integrity.js";
 import { readLatestRun, refreshRunFreshness, renderMarkdown } from "./report.js";
 import { statusExitCode } from "./status.js";
 import { verify } from "./verifier.js";
+const packageVersion = createRequire(import.meta.url)("../package.json").version;
 const program = new Command()
     .name("shipproof")
     .description("Deterministic acceptance evidence for AI coding agents")
-    .version("0.1.0");
+    .version(packageVersion);
 program
     .command("init")
     .description("Create a starter acceptance contract")

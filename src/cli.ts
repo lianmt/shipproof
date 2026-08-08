@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { access, appendFile, readFile, writeFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { Command } from "commander";
 import YAML from "yaml";
@@ -14,10 +15,12 @@ import { statusExitCode } from "./status.js";
 import type { CheckDefinition, ShipProofConfig } from "./types.js";
 import { verify } from "./verifier.js";
 
+const packageVersion = (createRequire(import.meta.url)("../package.json") as { version: string }).version;
+
 const program = new Command()
   .name("shipproof")
   .description("Deterministic acceptance evidence for AI coding agents")
-  .version("0.1.0");
+  .version(packageVersion);
 
 program
   .command("init")
