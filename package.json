@@ -1,6 +1,6 @@
 {
   "name": "@lianmt/shipproof",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Model-independent acceptance contracts and tamper-aware evidence for AI coding agents.",
   "type": "module",
   "bin": {
